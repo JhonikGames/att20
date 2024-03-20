@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+</head>
+<body>
+    <form action="./veiculos.php" method="post">
+        <h2>Cadastrar veiculo</h2>
+        <hr>
+        <label for="placa">Placa do veiculo:</label><br>
+        <input type="text" name="placa" placeholder="ABC1D23" maxlength="7" required>
+        <br><br>
+        <label for="modelo">Modelo do veiculo:</label><br>
+        <input type="text" name="modelo" placeholder="Uno" maxlength="50" required>
+        <br><br>
+        <label for="marca">Marca do veiculo:</label><br>
+        <input type="text" name="marca" placeholder="Fiat" maxlength="50" required>
+        <br><br>
+        <label for="cor">Cor do veiculo:</label><br>
+        <input type="color" name="cor" value="#ffffff" required>
+        <br><br>
+        <label for="ano">Ano do veiculo:</label><br>
+        <input type="number" name="ano" placeholder="2016" min="1900" max="2030" required>
+        <br><br>
+        <label for="ar_cond">Ar Condicionado:</label><br>
+        <input type="radio" id="sim" name="ar_cond" value="1" required>
+            <label>Sim</label>
+        <input type="radio" id="nao" name="ar_cond" value="0" required>
+            <label>Não</label>
+        <br><br>
+        <label for="dir_hidra">Direção Hidraulica</label><br>
+        <input type="radio" id="sim" name="dir_hidra" value="1" required>
+            <label>Sim</label>
+        <input type="radio" id="nao" name="dir_hidra" value="0" required>
+            <label>Não</label>
+        <br><br>
+        <label for="dir_eletrica">Direção Eletrica:</label><br>
+        <input type="radio" id="sim" name="dir_eletrica" value="1" required>
+            <label>Sim</label>
+        <input type="radio" id="nao" name="dir_eletrica" value="0" required>
+            <label>Não</label>
+        <br><br>
+        <label for="portas">Portas: </label><br>
+        <select name="portas">
+            <option value="2">2 portas</option>
+            <option value="4">4 portas</option>
+        </select>
+        <br><br>
+        <label for="tipo">Tipo de Veiculo: </label><br>
+        <select name="tipo">
+            <option value="1">Sedan</option>
+            <option value="2">Hatch</option>
+            <option value="3">Off-road</option>
+            <option value="4">SUV</option>
+            <option value="5">Pickup</option>
+            <option value="6">Utilitário</option>
+        </select>
+        <br><br>
+        <label for="importado">Importado:</label><br>
+        <input type="radio" name="importado" value="1" required>
+            <label>Sim</label>
+        <input type="radio" name="importado" value="0" required>
+            <label>Não</label>
+        <br><br>
+        <label for="cambio">Cambio:</label><br>
+        <select name="cambio">
+            <option value="0">Manual</option>
+            <option value="1">Automático</option>
+        </select>
+        <br><br>
+        <label for="km">Km Atual: </label><br>
+        <input type="number" name="km" size="6" min="0" max="999999" required>
+        <br><br>
+        <label for="combustivel">Tipo de Combustível:</label><br>
+        <select name="combustivel">
+            <option value="1">Gasolina</option>
+            <option value="2">Etanol</option>
+            <option value="3">Flex</option>
+            <option value="4">Diesel</option>
+            <option value="5">Elétrico</option>
+            <option value="6">Hibrido</option>
+        </select>
+        <br><br>
+        <button type="submit">Cadastrar</button>
+        <button type="reset">Limpar tudo</button>
+    </form>
+</body>
+</html>

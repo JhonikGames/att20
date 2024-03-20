@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Venda de Veiculos</title>
+    <style>
+        * {
+            font-family: Arial;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .btn {
+            margin: auto;
+            display: flex;
+            width: fit-content;
+            padding: 4px;
+            border: 1px solid black;
+            border-radius: 4px;
+            background-color: rgb(164, 255, 255);
+            cursor: pointer;
+
+            & a {
+                color: black;
+                font-family: Arial;
+                text-decoration: none;
+
+            }
+
+            &:hover {
+                background-color: rgb(120, 177, 177);
+                & a {
+                    color: white;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Portal de Venda de Veiculos</h1>
+    <div class="btn">
+        <a href="./cadastra.html">Cadastrar veículo para venda</a>
+    </div>
+</body>
+</html>
