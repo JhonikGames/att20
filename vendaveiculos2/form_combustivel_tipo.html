@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form action="./processa.php" method="post">
+        <h1>Cadastrar veiculo (3)</h1>
+        <h2>Tipo de Combustivel</h2>
+        <hr>
+        <label for="tipo">Tipo de Veiculo: </label><br>
+        <select name="tipo">
+            <option value="1">Sedan</option>
+            <option value="2">Hatch</option>
+            <option value="3">Off-road</option>
+            <option value="4">SUV</option>
+            <option value="5">Pickup</option>
+            <option value="6">Utilitário</option>
+        </select>
+        <br><br>
+        <label for="importado">Importado:</label><br>
+        <input type="radio" name="importado" value="1" required>
+            <label>Sim</label>
+        <input type="radio" name="importado" value="0" required>
+            <label>Não</label>
+        <br><br>
+        <label for="cambio">Cambio:</label><br>
+        <select name="cambio">
+            <option value="0">Manual</option>
+            <option value="1">Automático</option>
+        </select>
+        <br><br>
+        <label for="km">Km Atual: </label><br>
+        <input type="number" name="km" placeholder="0" size="6" min="0" max="999999" required>
+        <br><br>
+        <label for="combustivel">Tipo de Combustível:</label><br>
+        <select name="combustivel">
+            <option value="1">Gasolina</option>
+            <option value="2">Etanol</option>
+            <option value="3">Flex</option>
+            <option value="4">Diesel</option>
+            <option value="5">Elétrico</option>
+            <option value="6">Hibrido</option>
+        </select>
+        <br><br>
+        <div class="end">
+            <button type="submit">Finalizar</button>
+            <button type="reset">Limpar tudo</button>
+        </div>
+        <a class="back" href="./">Voltar</a>
+    </form>
+</body>
+</html>

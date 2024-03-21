@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form action="./processa.php" method="post">
+        <h1>Cadastrar veiculo (2)</h1>
+        <h2>Opcionais</h2>
+        <hr>
+        <label for="ar_cond">Ar Condicionado:</label><br>
+        <input type="radio" id="sim" name="ar_cond" value="1" required>
+            <label>Sim</label>
+        <input type="radio" id="nao" name="ar_cond" value="0" required>
+            <label>Não</label>
+        <br><br>
+        <label for="dir_hidra">Direção Hidraulica</label><br>
+        <input type="radio" id="sim" name="dir_hidra" value="1" required>
+            <label>Sim</label>
+        <input type="radio" id="nao" name="dir_hidra" value="0" required>
+            <label>Não</label>
+        <br><br>
+        <label for="dir_eletrica">Direção Eletrica:</label><br>
+        <input type="radio" id="sim" name="dir_eletrica" value="1" required>
+            <label>Sim</label>
+        <input type="radio" id="nao" name="dir_eletrica" value="0" required>
+            <label>Não</label>
+        <br><br>
+        <label for="portas">Portas: </label><br>
+        <select name="portas">
+            <option value="2">2 portas</option>
+            <option value="4">4 portas</option>
+        </select>
+        <br><br>
+        <div class="end">
+            <button type="submit">Avançar</button>
+            <button type="reset">Limpar tudo</button>
+        </div>
+        <a class="back" href="./">Voltar</a>
+    </form>
+</body>
+</html>

@@ -6,6 +6,32 @@ if (!$_POST) {
     die("Sem dados!");
 }
 
+if (!$_POST['page']) {
+    die("Nao foi possivel adquerir a pagina local");
+}
+
+switch ($_POST['page']) {
+    case '1':
+        // principal
+        
+        header("Location: ./form_opcionais.html");
+        break;
+    
+    case '2':
+        // opcional
+        header("Location: ./form_combustivel_tipo.html");
+        break;
+
+    case '3':
+        // combustivel
+        break;
+
+    default:
+        # code...
+        break;
+}
+
+
 include "./host.php";
 
 if (!$host) {
@@ -81,3 +107,5 @@ echo "<br><br>";
 var_dump($values);*/
 
 InsertInto($database, $table_selected, $colums, $values);
+
+header("Location: ./");

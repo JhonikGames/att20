@@ -1,0 +1,58 @@
+* {
+    font-family: Arial;
+    margin: 0;
+    top: 0;
+}
+
+.top {
+    background-color: rgb(255, 255, 255);
+    padding: 8px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .1);
+    color: black;
+    text-align: center;
+}
+
+.btn {
+    margin: auto;
+    display: flex;
+    width: fit-content;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+
+    & a {
+        color: black;
+        font-family: Arial;
+        text-decoration: none;
+
+    }
+
+    &:hover {
+        background-color: rgb(153, 153, 153);
+        & a {
+            color: white;
+        }
+    }
+}
+
+.banner {
+    display: flex;
+    background: url("https://imgs.search.brave.com/43IGxHqNMF7sK4fAJHCWHEUOLqbcscmSQj9rVSYuq3U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93MC5w/ZWFrcHguY29tL3dh/bGxwYXBlci80NDQv/NjE5L0hELXdhbGxw/YXBlci1wb3JzY2hl/LWluLWJsYWNrLXBv/cnNjaGUtY2Fycy1i/bGFjay5qcGc");
+    width: 100%;
+    height: 500px;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: block;
+    width: fit-content;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    box-shadow: 0 0 30px 2px rgba(0, 0, 0, .1);
+
+    & input {
+        margin-top: 8px;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form action="./processa.php" method="post">
+        <h1>Cadastrar veiculo (1)</h1>
+        <h2>Dados Principais</h2>
+        <input type="hidden" name="page" value="1">
+        <hr>
+        <label for="placa">Placa do veiculo:</label><br>
+        <input type="text" name="placa" placeholder="ABC1D23" maxlength="7" required>
+        <br><br>
+        <label for="modelo">Modelo do veiculo:</label><br>
+        <input type="text" name="modelo" placeholder="Uno" maxlength="50" required>
+        <br><br>
+        <label for="marca">Marca do veiculo:</label><br>
+        <input type="text" name="marca" placeholder="Fiat" maxlength="50" required>
+        <br><br>
+        <label for="cor">Cor do veiculo:</label><br>
+        <input type="color" name="cor" value="#ffffff" required>
+        <br><br>
+        <label for="ano">Ano do veiculo:</label><br>
+        <input type="number" name="ano" placeholder="2016" min="1900" max="2030" required>
+        <br><br>
+        <div class="end">
+            <button type="submit">Avançar</button>
+            <button type="reset">Limpar tudo</button>
+        </div>
+        <a class="back" href="./">Voltar</a>
+    </form>
+</body>
+</html>
