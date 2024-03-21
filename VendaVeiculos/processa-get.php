@@ -16,6 +16,7 @@ if (!$host) {
 
 $placa= $_GET['placa'];
 $modelo= $_GET['modelo'];
+$marca= $_GET['marca'];
 $cor= $_GET['cor'];
 $ano= $_GET['ano'];
 $ar_cond= $_GET['ar_cond'];
@@ -29,13 +30,13 @@ $km= $_GET['km'];
 $combustivel= $_GET['combustivel'];
 
 $colums = [
-    "placa", "modelo", "cor", 
+    "placa", "modelo", "marca", "cor", 
     "ano", "ar_condicionado", "dir_hidraulica", 
     "dir_eletrica", "portas", "tipo", "importado",
     "cambio", "km", "combustivel"
 ];
 $values = [
-    $placa, $modelo, $cor,
+    $placa, $modelo, $marca, $cor,
     $ano, $ar_cond, $dir_hidraulica,
     $dir_eletrica, $portas, $tipo, $importado,
     $cambio, $km, $combustivel

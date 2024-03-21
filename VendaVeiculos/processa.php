@@ -16,6 +16,7 @@ if (!$host) {
 
 $placa= $_POST['placa'];
 $modelo= $_POST['modelo'];
+$marca= $_POST['marca'];
 $cor= $_POST['cor'];
 $ano= $_POST['ano'];
 $ar_cond= $_POST['ar_cond'];
@@ -29,13 +30,13 @@ $km= $_POST['km'];
 $combustivel= $_POST['combustivel'];
 
 $colums = [
-    "placa", "modelo", "cor", 
+    "placa", "modelo", "marca", "cor", 
     "ano", "ar_condicionado", "dir_hidraulica", 
     "dir_eletrica", "portas", "tipo", "importado",
     "cambio", "km", "combustivel"
 ];
 $values = [
-    $placa, $modelo, $cor,
+    $placa, $modelo, $marca, $cor,
     $ano, $ar_cond, $dir_hidraulica,
     $dir_eletrica, $portas, $tipo, $importado,
     $cambio, $km, $combustivel

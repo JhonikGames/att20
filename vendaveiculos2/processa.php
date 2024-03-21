@@ -54,6 +54,7 @@ function ProcessForm() : void {
 
     $placa= $POST_SESSION['placa'];
     $modelo= $POST_SESSION['modelo'];
+    $marca= $POST_SESSION['marca'];
     $cor= $POST_SESSION['cor'];
     $ano= $POST_SESSION['ano'];
     $ar_cond= $POST_SESSION['ar_cond'];
@@ -67,13 +68,13 @@ function ProcessForm() : void {
     $combustivel= $POST_SESSION['combustivel'];
 
     $colums = [
-        "placa", "modelo", "cor", 
+        "placa", "modelo", "marca", "cor", 
         "ano", "ar_condicionado", "dir_hidraulica", 
         "dir_eletrica", "portas", "tipo", "importado",
         "cambio", "km", "combustivel"
     ];
     $values = [
-        $placa, $modelo, $cor,
+        $placa, $modelo, $marca, $cor,
         $ano, $ar_cond, $dir_hidraulica,
         $dir_eletrica, $portas, $tipo, $importado,
         $cambio, $km, $combustivel
