@@ -7,6 +7,7 @@ $host = [
 ];
 
 $database = "venda_veiculos";
+$table_prefix = "veiculos_decada";
 
 // conectar o banco de dados
 function ConnectSQLi() : mysqli {
@@ -23,13 +24,29 @@ function ConnectSQLi() : mysqli {
 function ConnectDatabase($database_name) : mysqli {
     $host = $GLOBALS['host'];
 
-    $conn = mysqli_connect($host[0], $host[1], $host[2], $database_name);
-    if (!$conn) {
-        CreateDatabase($database_name);
-        //die("Falha de conexao: " . mysqli_connect_error());
+    $conn = ConnectSQLi();
+    $sql_query = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$database_name';";
+    
+    if ($result = mysqli_query($conn, $sql_query)) {
+        $num = mysqli_num_rows($result);
+        
+        echo mysqli_free_result($result);
+        mysqli_close($conn);
+        
+        if ($num == '1') {
+            $conn = mysqli_connect($host[0], $host[1], $host[2], $database_name);
+            if (!$conn) {
+                //CreateDatabase($database_name);
+                die("Falha de conexao: " . mysqli_connect_error());
+            }
+            return $conn;
+        } else {
+            CreateDatabase($database_name);
+            return ConnectDatabase($database_name);
+        }
+    } else {
+        die ("falha");
     }
-
-    return $conn;
 }
 function  CreateDatabase($database_name) : void {
     $conn = ConnectSQLi();
@@ -38,6 +55,7 @@ function  CreateDatabase($database_name) : void {
 
     if (mysqli_query($conn, $sql_command)) {
         echo "Banco de dados criado!";
+        CreateTables($database_name);
     } else {
         echo "Erro ao criar banco de dados: " . mysqli_error($conn);
     }
@@ -58,12 +76,14 @@ function newQuery($database_name, $sql_command) : void {
 }
 
 function CreateTables($database_name) : void {
+    $table_prefix = $GLOBALS['table_prefix'];
+
     $query = "CREATE TABLE `$database_name`.";
     $tables = [
-        "veiculos_decada90",
-        "veiculos_decada2000",
-        "veiculos_decada2010",
-        "veiculos_decada2020"
+        $table_prefix."90",
+        $table_prefix."2000",
+        $table_prefix."2010",
+        $table_prefix."2020"
     ];
     $cmd = " (
         `id` INT(5) NOT NULL AUTO_INCREMENT , 
@@ -94,6 +114,7 @@ function CreateTables($database_name) : void {
 
 function InsertInto($database_name, $table_name, $colums, $values) : void {
     $sql_command = "INSERT INTO `$table_name` (";
+    // concatena as colunas da array $colums para o query
     for ($i=0; $i<count($colums); $i++) {
         if ($i == count($colums)-1) {
             $sql_command = $sql_command . "`". $colums[$i] ."`) VALUES (";
@@ -101,13 +122,15 @@ function InsertInto($database_name, $table_name, $colums, $values) : void {
             $sql_command = $sql_command ."`". $colums[$i] ."`, ";
         }
     }
+    // concatena os valores da array $values para o query
+    for ($i=0; $i<count($values); $i++) {
+        if ($i == count($values)-1) {
+            $sql_command = $sql_command . "'". $values[$i] ."')";
+        } else {
+            $sql_command = $sql_command ."'". $values[$i] ."', ";
+        }
+    }
 
-    // TODO
-    /*
-    
-    INSERT INTO `veiculos_decada90` (`id`, `placa`, `modelo`, `marca`, `cor`, `ano`, `ar_condicionado`, `dir_hidraulica`, `dir_eletrica`, `portas`, `tipo`, `importado`, `cambio`, `km`, `combustivel`) VALUES (NULL, 'awd4591', '', '', '', '', '', '', '', '', '', '', '', '', '')
-    
-    */
-
+    //echo $sql_command;
     newQuery($database_name, $sql_command);
 }
