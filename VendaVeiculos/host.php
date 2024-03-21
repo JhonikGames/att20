@@ -29,8 +29,6 @@ function ConnectDatabase($database_name) : mysqli {
     
     if ($result = mysqli_query($conn, $sql_query)) {
         $num = mysqli_num_rows($result);
-        
-        echo mysqli_free_result($result);
         mysqli_close($conn);
         
         if ($num == '1') {
@@ -51,7 +49,7 @@ function ConnectDatabase($database_name) : mysqli {
 function  CreateDatabase($database_name) : void {
     $conn = ConnectSQLi();
 
-    $sql_command = "CREATE DATABASE IF NOT EXIST ". $database_name;
+    $sql_command = "CREATE DATABASE IF NOT EXISTS ". $database_name;
 
     if (mysqli_query($conn, $sql_command)) {
         echo "Banco de dados criado!";
@@ -78,7 +76,7 @@ function newQuery($database_name, $sql_command) : void {
 function CreateTables($database_name) : void {
     $table_prefix = $GLOBALS['table_prefix'];
 
-    $query = "CREATE TABLE IF NOT EXIST `$database_name`.";
+    $query = "CREATE TABLE IF NOT EXISTS `$database_name`.";
     $tables = [
         $table_prefix."90",
         $table_prefix."2000",
