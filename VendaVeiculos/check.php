@@ -13,10 +13,8 @@ if ($_POST['tipo'] == "create") {
     CreateDatabase($database);
 } else {
     //echo "delete";
-    $sql = "DROP DATABASE `$database`";
-    newQuery($database, $sql);
+    $sql = "DROP DATABASE IF EXISTS `$database`";
+    newRootQuery($sql);
 }
-
-sleep(5);
 
 header("Location: ./");

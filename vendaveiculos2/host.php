@@ -63,7 +63,19 @@ function  CreateDatabase($database_name) : void {
 
 function newQuery($database_name, $sql_command) : void {
     $conn = ConnectDatabase($database_name);
-    echo $sql_command;
+    //echo $sql_command;
+    if (mysqli_query($conn, $sql_command)) {
+        echo "Consulta executada!";
+    } else {
+        echo "Erro ao consultar: " . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+}
+
+function newRootQuery($sql_command) : void {
+    $conn = ConnectSQLi();
+    //echo $sql_command;
     if (mysqli_query($conn, $sql_command)) {
         echo "Consulta executada!";
     } else {

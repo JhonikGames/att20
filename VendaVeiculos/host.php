@@ -73,6 +73,18 @@ function newQuery($database_name, $sql_command) : void {
     mysqli_close($conn);
 }
 
+function newRootQuery($sql_command) : void {
+    $conn = ConnectSQLi();
+    //echo $sql_command;
+    if (mysqli_query($conn, $sql_command)) {
+        echo "Consulta executada!";
+    } else {
+        echo "Erro ao consultar: " . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+}
+
 function CreateTables($database_name) : void {
     $table_prefix = $GLOBALS['table_prefix'];
 
