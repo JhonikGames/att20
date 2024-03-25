@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="../form.css">
 </head>
 <body>
-    <form action="./processa.php" method="post">
-        <h1>Cadastrar veiculo</h1>
+    <form action="./processa-get.php" method="get">
+        <h1>Cadastrar veiculo (GET)</h1>
         <hr>
         <label for="placa">Placa do veiculo:</label><br>
         <input type="text" name="placa" placeholder="ABC1D23" maxlength="7" required>
@@ -88,7 +88,7 @@
             <button type="submit">Cadastrar</button>
             <button type="reset">Limpar tudo</button>
         </div>
-        <a class="back" href="./">Voltar</a>
+        <a class="back" href="../">Voltar</a>
     </form>
 </body>
 </html>

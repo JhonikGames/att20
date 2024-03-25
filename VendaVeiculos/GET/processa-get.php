@@ -6,7 +6,7 @@ if (!$_GET) {
     die("Sem dados!");
 }
 
-include "./host.php";
+include "../host.php";
 
 if (!$host) {
     die("Erro ao incluir host!");
